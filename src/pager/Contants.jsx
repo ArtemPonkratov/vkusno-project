@@ -1,3 +1,7 @@
+import { Link } from "react-router-dom";
+import whatsappIcon from "../img/whatsapp.png";
+import telegramIcon from "../img/Telegram.png";
+
 function Contact() {
   return (
     <div className="contact-info">
@@ -6,6 +10,14 @@ function Contact() {
         <p>Телефон: -</p>
         <p>Email: -----</p>
         <p>Адрес: - , Город -</p>
+      <div className="info-icons">
+      <Link to="whatsapp://send?phone=79969593305" className="whatsapp">  
+            <img src={whatsappIcon} alt="WhatsApp Icon" style={{width: 250, margin:10}}/>
+          </Link>
+          <Link to="https://telegram.me/логинкомпании" className="whatsapp">  
+            <img src={telegramIcon} alt="WhatsApp Icon" style={{width: 250, margin:10}}/>
+          </Link>
+      </div>
       </div>
       <div className="contact-info-bottom">
         <h2>Обратная связь</h2>
