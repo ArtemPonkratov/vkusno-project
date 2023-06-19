@@ -17,8 +17,11 @@
 
 }
 
-/* body {
-  background-image: url(/img/whitebody.jpg);
+
+
+body {
+  background-image: url(./img/OBDPN20.jpg);
   background-size: 100%;
-} */
+  background-repeat: no-repeat
+}
 

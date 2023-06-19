@@ -3,16 +3,16 @@
   flex-direction: column;
   align-items: center;
   margin: 100px;
-}
+  font-size: 17px;
+  font-family: 'Amatic SC', cursive;
+  font-family: 'Balsamiq Sans', cursive;
+
+  }
 
 .contact-info-top {
   text-align: center;
   margin-bottom: 300px;
-  border: solid 10px;
-  border-color: rgba(177, 215, 202, 0.526);
-  border-radius: 10px;
-  padding: 10px 10px 30px 10px;
-
+  
 }
 
 .contact-info-bottom form {
@@ -37,7 +37,7 @@ textarea {
   padding: 6px;
   font-size: 16px;
   border-radius: 4px;
-  border: 1px solid #4f4a4a;
+  border: 1px solid #5e4f4f;
 }
 
 button[type="submit"] {
@@ -52,4 +52,8 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #45a049;
+}
+
+.contact-info h2 {
+ color: #5e4f4f;
 }
