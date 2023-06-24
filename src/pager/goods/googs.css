@@ -9,7 +9,7 @@
   .carda {
     display: flex;
     align-items: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.578);
     max-width: 600px;
     margin: auto;
     
@@ -76,6 +76,14 @@
     line-height: 18px;
     color: rgba(66, 67, 72, 0.8);
     cursor: pointer;
+}
+
+.filling-select {
+  font-size: 17px;
+}
+
+.font {
+  font-size: 20px;
 }
 
   

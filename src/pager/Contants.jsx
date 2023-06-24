@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
-import whatsappIcon from "../img/whatsapp.png";
-import telegramIcon from "../img/Telegram.png";
+import whatsappIcon from "../img1/whatsapp.png";
+import telegramIcon from "../img1/Telegram.png";
+
+
+
+
+
+
 
 function Contact() {
   return (

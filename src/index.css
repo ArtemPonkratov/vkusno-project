@@ -21,7 +21,7 @@
 
 
 body {
-  background-image: url(./img/OBDPN20.jpg);
+  background-image: url('../public/img/OBDPN20.jpg');
   background-size: 100%;
   background-repeat: no-repeat
 }

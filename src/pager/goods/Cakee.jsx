@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import './googs.css';
 
-function Cake() {
+function Cakee() {
 
 
   return (
@@ -40,14 +40,8 @@ function Cake() {
           </div>
         </div>
       </div>
-
-      
     </div>
-
-    
-
-    
   );
 }
 
-export default Cake;
+export default Cakee;
