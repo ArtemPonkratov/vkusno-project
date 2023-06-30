@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./element/header";
 import Home from "./pager/Home";
@@ -6,11 +7,13 @@ import Delivery from "./pager/Delivery";
 import Contacts from "./pager/Contants";
 import Cake from "./pager/goods/Cake";
 import Cakee from "./pager/goods/Cakee";
+import FadeImage from "./pager/FadeImage";
 
 function App() {
   return (
     <>
       <div className="wrapper">
+        <FadeImage />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />

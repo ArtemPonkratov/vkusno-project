@@ -1,10 +1,25 @@
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../img1/logo.png";
 
-
 function Header() {
+  const [showMenu, setShowMenu] = useState(false); // Изначально показываем меню
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setShowMenu(scrollY > 0); // Показываем меню, если произошел скролл вниз
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="nav">
+    <header className={`nav ${showMenu ? '' : 'hide-menu'}`}>
       <div className="container">
         <div className="header_row">
           <div className="header_logo">
@@ -28,4 +43,5 @@ function Header() {
     </header>
   );
 }
+
 export default Header;

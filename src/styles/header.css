@@ -1,29 +1,25 @@
-
-
 .header_row {
-    display: flex;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 0.239);
-    /* Add the glass effect styles */
-    backdrop-filter: blur(100px);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.127);
-    border-radius: 10px;
-    border-color: red;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    flex-direction: column; /* Изменение направления размещения элементов на вертикальное */
-    align-items: center;
-
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.239);
+  /* Add the glass effect styles */
+  backdrop-filter: blur(100px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.127);
+  border-radius: 10px;
+  border-color: red;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  flex-direction: column; /* Изменение направления размещения элементов на вертикальное */
+  align-items: center;
 }
-
-
-
-
 
 .header_nav {
   display: flex;
   justify-content: center;
   padding-top: 25px;
+  z-index: 1111;
+  opacity: 1;
+  transition: none;
 }
 
 .header_nav ul {
@@ -78,4 +74,18 @@
   margin: -54px;
 }
 
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  opacity: 1;
+ 
+}
 
+.hide-menu {
+  opacity: 1;
+  pointer-events: none;
+  visibility: hidden;
+}
