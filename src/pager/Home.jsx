@@ -1,46 +1,131 @@
-import React from "react";
-import { Link } from "react-router-dom"; // Импортируем компонент Link
-import num1 from "../img1/num1.png";
-import num2 from "../img1/num2.png";
-import num3 from "../img1/num3.png";
-import num4 from "../img1/num4.png";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import num1 from '../img1/num1.png';
+import num2 from '../img1/num2.png';
+import num3 from '../img1/num3.png';
+import num4 from '../img1/num4.png';
+
 
 
 function Home() {
+  const [modalProductId, setModalProductId] = useState(null); // id выбранного товара для модального окна
+
+
+
+  // Функция для открытия модального окна с определенным id товара
+  const openModal = (productId) => {
+    setModalProductId(productId);
+  };
+
+  // Функция для закрытия модального окна
+  const closeModal = () => {
+    setModalProductId(null);
+  };
 
   return (
-  <div className="containr">
-    <div className="cont">
-      <div className="card">
-        <img src="./img/keks.jpg" alt="Product" style={{ width: 300 }} />
-        <div className="card-info">
-          <h2>Капкейки</h2>
-          <Link to="./Cake" className="button">Подробности</Link> {/* Заменяем <button> на <Link> */}
+    <div className="container">
+      <div className="cont">
+        <div className="card">
+          <img src="./img/keks.jpg" alt="Product" style={{ width: 400 }} />
+          <div className="card-info">
+            <h2>Капкейки</h2>
+            <button onClick={() => openModal(1)} className="button">Подробности</button>
+          </div>
+        </div>
+        <div className="card">
+          <img src="./img/keks.jpg" alt="Product" style={{ width: 400 }} />
+          <div className="card-info">
+            <h2>Шу</h2>
+            <button onClick={() => openModal(2)} className="button">Подробности</button>
+          </div>
+        </div>
+        <div className="card">
+          <img src="./img/keks.jpg" alt="Product" style={{ width: 400 }} />
+          <div className="card-info">
+            <h2>Шу</h2>
+            <button onClick={() => openModal(2)} className="button">Подробности</button>
+          </div>
+        </div>
+        <div className="card">
+          <img src="./img/keks.jpg" alt="Product" style={{ width: 400 }} />
+          <div className="card-info">
+            <h2>Шу</h2>
+            <button onClick={() => openModal(2)} className="button">Подробности</button>
+          </div>
         </div>
       </div>
-      <div className="card">
-        <img src="./img/keks.jpg" alt="Product" style={{ width: 300 }} />
-        <div className="card-info">
-          <h2>Пицца</h2>
-          <Link to="/Cakee" className="button">Подробности</Link> {/* Заменяем <button> на <Link> */}
+
+      {/* Модальное окно для товара с id 1 */}
+      {modalProductId === 1 && (
+        <div className="modal">
+          <div className="modal-content">
+            <img src="./img/test1.jpg" alt="Product" className="product-image" style={{ width: 400 }} />
+            <div className="product-details">
+              <h2 className="product-name">Капкейки</h2>
+              <p className="product-price">Цена: 350p</p>
+              <div className="product-filling">
+                <p className='font'>1. Капкейк</p>
+                <select className="filling-select">
+                  <option className='select__head'>Выберите:</option>
+                  <option>Ванильный</option>
+                  <option>Шоколадный</option>
+                </select>
+                <p className='font'>2. Начинка</p>
+                <select className="filling-select">
+                  <option className='select__head'>Выберите:</option>
+                  <option>Вишня</option>
+                  <option>Соленая карамель</option>
+                  <option>Без начинки</option>
+                </select>
+              </div>
+              <div className="product-quantity">
+                <p className='font'>3. Количество</p>
+                <select className="filling-select">
+                  <option>6</option>
+                  <option>12</option>
+                  <option>24</option>
+                </select>
+              </div>
+              <Link to="/" className="order-button">Заказать</Link>
+            </div>
+            <button onClick={closeModal} className="close-button">Закрыть</button>
+          </div>
         </div>
-      </div>
-      <div className="card">
-        <img src="./img/keks.jpg" alt="Product" style={{ width: 300 }} />
-        <div className="card-info">
-          <h2>Название продукта</h2>
-          <Link to="/" className="button">Подробности</Link> {/* Заменяем <button> на <Link> */}
+      )}
+
+      {/* Модальное окно для товара с id 2 */}
+      {modalProductId === 2 && (
+        <div className="modal">
+          <div className="modal-content">
+            <img src="./img/test2.jpg" alt="Product" className="product-image" style={{ width: 400 }} />
+            <div className="product-details">
+              <h2 className="product-name">Пицца</h2>
+              <p className="product-price">Цена: 500p</p>
+              <div className="product-toppings">
+                <p className='font'>1. Топпинги</p>
+                <select className="topping-select">
+                  <option className='select__head'>Выберите:</option>
+                  <option>Грибы</option>
+                  <option>Помидоры</option>
+                  <option>Сыр</option>
+                </select>
+              </div>
+              <div className="product-quantity">
+                <p className='font'>2. Количество</p>
+                <select className="filling-select">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                </select>
+              </div>
+              <Link to="/" className="order-button">Заказать</Link>
+            </div>
+            <button onClick={closeModal} className="close-button">Закрыть</button>
+          </div>
         </div>
-      </div>
-      <div className="card">
-        <img src="./img/keks.jpg" alt="Product" style={{ width: 300 }} />
-        <div className="card-info">
-          <h2>Название продукта</h2>
-          <Link to="/" className="button">Подробности</Link> {/* Заменяем <button> на <Link> */}
-        </div>
-      </div>
-    </div>  
-    <div className="how">
+      )}
+
+<div className="how">
       <h2>Как мы работаем:</h2>
       <div className="work-steps">
         <div className="work-step">
@@ -70,6 +155,8 @@ function Home() {
       </div>
     </div>
   </div>
+    
+    
   );
 }
 

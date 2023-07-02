@@ -1,6 +1,6 @@
 .cont {
   display: grid;
-  grid-template-columns: repeat(2, 300px);
+  grid-template-columns: repeat(2, 400px);
   grid-template-rows: repeat(2, auto);
   grid-column-gap: 30px;
   grid-row-gap: 60px;
@@ -20,7 +20,15 @@
   position: relative;
 }
 
-.card .button {
+
+
+
+
+
+
+
+
+/* .card .button {
   display: inline-block;
   border: none;
   outline: 0;
@@ -31,7 +39,7 @@
   cursor: pointer;
   width: 100%;
   font-size: 18px;
-  text-decoration: none; /* Добавляем стиль для удаления подчеркивания */
+  text-decoration: none; 
 }
 
 .card .button:hover {
@@ -76,7 +84,8 @@
 .card .button:hover {
   opacity: 0.7;
   color: red;
-}
+} */
+
 
 
 

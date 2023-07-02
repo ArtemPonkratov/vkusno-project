@@ -72,6 +72,7 @@
 
 .header_logo img {
   margin: -54px;
+
 }
 
 .nav {
@@ -81,7 +82,7 @@
   width: 100%;
   z-index: 999;
   opacity: 1;
- 
+  transition: opacity 0.3s;
 }
 
 .hide-menu {
@@ -89,3 +90,4 @@
   pointer-events: none;
   visibility: hidden;
 }
+
