@@ -22,6 +22,21 @@ function Home() {
     setModalProductId(null);
   };
 
+  const modal1Images = [
+    "./img/keks.jpg",
+    "./img/1keks.jpg",
+    "./img/2keks.jpg",
+    "./img/3keks.jpg"
+  ];
+
+  // Картинки для модального окна с id 2
+
+
+  const [modalImageIndex, setModalImageIndex] = useState(0); // индекс текущей картинки в модальном окне
+
+ 
+  
+
   return (
     <div className="container">
       <div className="cont">
@@ -58,9 +73,29 @@ function Home() {
       {/* Модальное окно для товара с id 1 */}
       {modalProductId === 1 && (
         <div className="modal">
-          <div className="modal-content">
-            <img src="./img/test1.jpg" alt="Product" className="product-image" style={{ width: 400 }} />
-            <div className="product-details">
+        <div className="modal-content">
+          <div className="modal-images">
+            <img
+              src={modal1Images[modalImageIndex] }
+              alt="Product"
+              className="modal-image"
+              
+            />
+            {modal1Images.length > 1 && (
+              <div className="modal-navigator">
+                {modal1Images.map((image, index) => (
+                  <img
+                    key={index}
+                    src={image}
+                    alt={`foto ${index}`}
+                    className={`modal-navigator-image ${index === modalImageIndex ? 'active' : ''}`}
+                    onClick={() => setModalImageIndex(index)}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+          <div className="product-details">
               <h2 className="product-name">Капкейки</h2>
               <p className="product-price">Цена: 350p</p>
               <div className="product-filling">
@@ -93,11 +128,13 @@ function Home() {
         </div>
       )}
 
+      
+
       {/* Модальное окно для товара с id 2 */}
       {modalProductId === 2 && (
         <div className="modal">
           <div className="modal-content">
-            <img src="./img/test2.jpg" alt="Product" className="product-image" style={{ width: 400 }} />
+            <img src="./img/keks.jpg" alt="Product" className="product-image" style={{ width: 400 }} />
             <div className="product-details">
               <h2 className="product-name">Пицца</h2>
               <p className="product-price">Цена: 500p</p>
