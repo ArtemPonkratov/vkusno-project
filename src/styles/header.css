@@ -91,3 +91,81 @@
   visibility: hidden;
 }
 
+
+/* mobule */
+
+
+.header_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.239);
+  backdrop-filter: blur(100px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.127);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.desktop-logo {
+  display: block;
+}
+
+.mobile-logo {
+  display: none;
+}
+
+.burger-menu {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.hide-menu {
+  display: none;
+}
+
+
+
+/* header.css */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.mobile-menu li {
+  margin-bottom: 20px;
+}
+
+.mobile-menu li:last-child {
+  margin-bottom: 0;
+}
+
+.mobile-menu a {
+  color: #333;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.mobile-menu a:hover {
+  color: #ff5722;
+}
+
+
+

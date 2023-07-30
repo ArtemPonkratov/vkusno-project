@@ -10,6 +10,18 @@ import num4 from '../img1/num4.png';
 function Home() {
   const [modalProductId, setModalProductId] = useState(null); // id выбранного товара для модального окна
   const [modalImageIndex, setModalImageIndex] = useState(0); // индекс текущей картинки в модальном окне
+  const [selectedProduct, setSelectedProduct] = useState({
+    price: 0,
+    quantity: 0,
+  });
+
+
+   // Функция для обновления выбранной цены и количества товара
+   const handleProductChange = (event) => {
+    const { name, value } = event.target;
+    setSelectedProduct((prevProduct) => ({ ...prevProduct, [name]: value }));
+  };
+  
 
 
 
@@ -84,14 +96,14 @@ function Home() {
         <div className="card">
           <img src="./img/keks.jpg" alt="Product" style={{ width: 400 }} />
           <div className="card-info">
-            <h2>Шу</h2>
+            <h2>Пицца</h2>
             <button onClick={() => openModal(3)} className="button">Подробности</button>
           </div>
         </div>
         <div className="card">
           <img src="./img/keks.jpg" alt="Product" style={{ width: 400 }} />
           <div className="card-info">
-            <h2>Шу</h2>
+            <h2>Тест</h2>
             <button onClick={() => openModal(4)} className="button">Подробности</button>
           </div>
         </div>
@@ -101,6 +113,7 @@ function Home() {
       {modalProductId === 1 && (
         <div className="modal" onClick={handleModalClick}>
         <div className="modal-content">
+          
           <div className="modal-images">
             <img
               src={modal1Images[modalImageIndex] }
@@ -124,7 +137,7 @@ function Home() {
           </div>
           <div className="product-details">
               <h2 className="product-name">Капкейки</h2>
-              <p className="product-price">Цена: 350p</p>
+              <p className="product-price">Цена: {selectedProduct.quantity === "6" ? "350p" : selectedProduct.quantity === "12" ? "500p" : selectedProduct.quantity === "24" ? "6600p" : "0p"}</p>
               <div className="product-filling">
                 <p className='font'>1. Капкейк</p>
                 <select className="filling-select">
@@ -142,13 +155,21 @@ function Home() {
               </div>
               <div className="product-quantity">
                 <p className='font'>3. Количество</p>
-                <select className="filling-select">
-                  <option>6</option>
-                  <option>12</option>
-                  <option>24</option>
-                </select>
+                <select
+            className="filling-select"
+            name="quantity" // Добавим атрибут name для идентификации поля
+            value={selectedProduct.quantity} // Привяжем значение к состоянию selectedProduct
+            onChange={handleProductChange} // Добавим обработчик для обновления состояния
+          >
+            <option className='select__head'>Выберите:</option>
+            <option value={6}>6</option>
+            <option value={12}>12</option>
+            <option value={24}>24</option>
+          </select>
               </div>
+              
               <Link to="/" className="order-button">Заказать</Link>
+              <button onClick={closeModal} className="close-button">Закрыть</button> {/* Кнопка Закрыть */}
             </div>
           </div>
         </div>
@@ -182,30 +203,36 @@ function Home() {
             )}
           </div>
           <div className="product-details">
-              <h2 className="product-name">2</h2>
-              <p className="product-price">Цена: 350p</p>
+              <h2 className="product-name">Шу</h2>
+              <p className="product-price">Цена: {selectedProduct.goods2 === "6" ? "3440p" : selectedProduct.goods2 === "12" ? "500p" : selectedProduct.goods2 === "24" ? "6600p" : "0p"}</p>
               <div className="product-filling">
-                <p className='font'>1. Капкейк</p>
+                <p className='font'>1. Шу</p>
                 <select className="filling-select">
                   <option className='select__head'>Выберите:</option>
-                  <option>Ванильный</option>
-                  <option>Шоколадный</option>
+                  <option>-</option>
+                  <option>-</option>
                 </select>
                 <p className='font'>2. Начинка</p>
                 <select className="filling-select">
                   <option className='select__head'>Выберите:</option>
-                  <option>Вишня</option>
-                  <option>Соленая карамель</option>
-                  <option>Без начинки</option>
+                  <option>-</option>
+                  <option>-</option>
+                  <option>-</option>
                 </select>
               </div>
               <div className="product-quantity">
                 <p className='font'>3. Количество</p>
-                <select className="filling-select">
-                  <option>6</option>
-                  <option>12</option>
-                  <option>24</option>
-                </select>
+                <select
+            className="filling-select"
+            name="goods2" // Добавим атрибут name для идентификации поля
+            value={selectedProduct.goods2} // Привяжем значение к состоянию selectedProduct
+            onChange={handleProductChange} // Добавим обработчик для обновления состояния
+          >
+            <option className='select__head'>Выберите:</option>
+            <option value={6}>6</option>
+            <option value={12}>12</option>
+            <option value={24}>24</option>
+          </select>
               </div>
               <Link to="/" className="order-button">Заказать</Link>
             </div>
@@ -238,30 +265,36 @@ function Home() {
             )}
           </div>
           <div className="product-details">
-              <h2 className="product-name">3</h2>
-              <p className="product-price">Цена: 350p</p>
+              <h2 className="product-name">Пицца</h2>
+              <p className="product-price">Цена: {selectedProduct.goods3 === "6" ? "350p" : selectedProduct.goods3 === "12" ? "500p" : selectedProduct.goods3 === "24" ? "6600p" : "0p"}</p>
               <div className="product-filling">
-                <p className='font'>1. Капкейк</p>
+                <p className='font'>1. Тесто</p>
                 <select className="filling-select">
                   <option className='select__head'>Выберите:</option>
-                  <option>Ванильный</option>
-                  <option>Шоколадный</option>
+                  <option>-</option>
+                  <option>-</option>
                 </select>
                 <p className='font'>2. Начинка</p>
                 <select className="filling-select">
                   <option className='select__head'>Выберите:</option>
-                  <option>Вишня</option>
-                  <option>Соленая карамель</option>
-                  <option>Без начинки</option>
+                  <option>-</option>
+                  <option>-</option>
+                  <option>-</option>
                 </select>
               </div>
               <div className="product-quantity">
                 <p className='font'>3. Количество</p>
-                <select className="filling-select">
-                  <option>6</option>
-                  <option>12</option>
-                  <option>24</option>
-                </select>
+                <select
+            className="filling-select"
+            name="goods3" // Добавим атрибут name для идентификации поля
+            value={selectedProduct.goods3} // Привяжем значение к состоянию selectedProduct
+            onChange={handleProductChange} // Добавим обработчик для обновления состояния
+          >
+            <option className='select__head'>Выберите:</option>
+            <option value={6}>6</option>
+            <option value={12}>12</option>
+            <option value={24}>24</option>
+          </select>
               </div>
               <Link to="/" className="order-button">Заказать</Link>
             </div>
@@ -294,10 +327,10 @@ function Home() {
             )}
           </div>
           <div className="product-details">
-              <h2 className="product-name">4</h2>
-              <p className="product-price">Цена: 350p</p>
+              <h2 className="product-name">Временно</h2>
+              <p className="product-price">Цена: {selectedProduct.goods4 === "6" ? "350p" : selectedProduct.goods4 === "12" ? "500p" : selectedProduct.good4 === "24" ? "6600p" : "0p"}</p>
               <div className="product-filling">
-                <p className='font'>1. Капкейк</p>
+                <p className='font'>1. Временно</p>
                 <select className="filling-select">
                   <option className='select__head'>Выберите:</option>
                   <option>Ванильный</option>
@@ -306,18 +339,24 @@ function Home() {
                 <p className='font'>2. Начинка</p>
                 <select className="filling-select">
                   <option className='select__head'>Выберите:</option>
-                  <option>Вишня</option>
-                  <option>Соленая карамель</option>
-                  <option>Без начинки</option>
+                  <option>-</option>
+                  <option>-</option>
+                  <option>-</option>
                 </select>
               </div>
               <div className="product-quantity">
                 <p className='font'>3. Количество</p>
-                <select className="filling-select">
-                  <option>6</option>
-                  <option>12</option>
-                  <option>24</option>
-                </select>
+                <select
+            className="filling-select"
+            name="goods4" // Добавим атрибут name для идентификации поля
+            value={selectedProduct.quantity} // Привяжем значение к состоянию selectedProduct
+            onChange={handleProductChange} // Добавим обработчик для обновления состояния
+          >
+            <option className='select__head'>Выберите:</option>
+            <option value={6}>6</option>
+            <option value={12}>12</option>
+            <option value={24}>24</option>
+          </select>
               </div>
               <Link to="/" className="order-button">Заказать</Link>
             </div>

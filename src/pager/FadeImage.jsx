@@ -12,7 +12,7 @@ function Fadelmage () {
     {isHomePage && (
       <div className="Bg">
         <div className="conta">
-        <h1>Добро пожаловать в "Вкусно 39"</h1>
+        <h1>Добро пожаловать! </h1>
         <p>Попробуйте наши вкусные домашние кондитерские изделия!</p>
         <div className="icon"></div>
         </div>

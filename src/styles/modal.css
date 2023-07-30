@@ -9,6 +9,8 @@
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  font-family: 'Amatic SC', cursive;
+  font-family: 'Balsamiq Sans', cursive;
   
 }
 
@@ -69,14 +71,16 @@
 }
 
 .product-name {
-  font-size: 24px;
+  font-size: 40px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
 .product-price {
   font-size: 18px;
   margin-bottom: 20px;
+  color: red;
+  font-size: 21px;
 }
 
 .font {
@@ -119,3 +123,27 @@
 .order-button:hover {
   background-color: #c0392b;
 }
+
+
+.close-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.close-button:hover {
+  background-color: #c0392b;
+}
+
+
+
+
+
+
+
+

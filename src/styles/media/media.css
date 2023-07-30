@@ -1,0 +1,231 @@
+@media (max-width: 768px) {
+    .desktop-logo {
+      display: none;
+    }
+
+  
+    .mobile-logo {
+      display: block;
+    }
+  
+    .header_nav {
+      display: none;
+    }
+  
+    .burger-menu {
+      display: block;
+    }
+  
+    body.scrolled .header_nav {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    body.scrolled .header_nav ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+    }
+  
+    body.scrolled .header_nav li {
+      margin: 10px 0;
+    }
+  
+    body.scrolled .header_nav a {
+      font-size: 24px;
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+  
+    body.scrolled .header_nav a:hover {
+      color: #007BFF;
+    }
+  }
+
+
+  @media only screen and (max-width: 600px) {
+
+    .cont {
+      grid-template-columns: 1fr;
+      grid-row-gap: 30px;
+      padding: 20px;
+    }
+  
+    .card {
+      max-width: 100%;
+    }
+  
+    .button {
+      padding: 12px 24px;
+      font-size: 14px;
+    }
+  
+    /* Styles for How we work section */
+    .how {
+      padding: 20px;
+    }
+  
+    .how h2 {
+      font-size: 20px;
+    }
+  
+    .work-steps {
+      flex-direction: column;
+    }
+  
+    .work-step {
+      flex: none;
+      margin: 10px 0;
+      padding: 10px;
+    }
+  
+    .work-step img {
+      width: 50px;
+    }
+  
+    .work-step p.step-title {
+      font-size: 22px;
+    }
+  
+    .work-step p {
+      font-size: 15px;
+    }
+  
+    /* Styles for Footer section */
+    .footer_nav {
+      padding: 10px;
+    }
+    
+  }
+
+  /* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 480px) {
+    .Bg {
+      min-height: 50vh;
+      /* Add more custom styles for mobile here if needed */
+    }
+  
+    .conta h1 {
+      font-size: 24px;
+      /* Add more custom styles for mobile here if needed */
+    }
+  
+    .conta p {
+      font-size: 18px;
+      /* Add more custom styles for mobile here if needed */
+    }
+  
+    .icon {
+      width: 30px;
+      height: 60px;
+      /* Add more custom styles for mobile here if needed */
+    }
+  }
+  
+  /* iPads (portrait and landscape) ----------- */
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    .Bg {
+      min-height: 70vh;
+      /* Add more custom styles for iPads here if needed */
+    }
+  
+    .conta h1 {
+      font-size: 32px;
+      /* Add more custom styles for iPads here if needed */
+    }
+  
+    .conta p {
+      font-size: 24px;
+      /* Add more custom styles for iPads here if needed */
+    }
+  
+    .icon {
+      width: 40px;
+      height: 80px;
+      /* Add more custom styles for iPads here if needed */
+    }
+  }
+  
+  /* Desktops and laptops ----------- */
+  @media only screen and (min-width: 1025px) {
+    .Bg {
+      min-height: 100vh;
+      /* Add more custom styles for desktops and laptops here if needed */
+    }
+  
+    .conta h1 {
+      font-size: 48px;
+      /* Add more custom styles for desktops and laptops here if needed */
+    }
+  
+    .conta p {
+      font-size: 30px;
+      /* Add more custom styles for desktops and laptops here if needed */
+    }
+  
+    .icon {
+      width: 50px;
+      height: 100px;
+      /* Add more custom styles for desktops and laptops here if needed */
+    }
+  }
+  
+
+  /* Smartphones (portrait) ----------- */
+@media screen and (max-width: 600px) {
+  .Bg {
+    background-size: 150% auto; 
+    /* увеличиваем размер фонового изображения, 
+    чтобы оно стало меньше на меньших экранах */
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+    .modal-content {
+      padding: 20px;
+      max-width: 90%; /* Чтобы оставить небольшое пространство по краям экрана */
+      flex-direction: column; /* Сделать элементы внутри стека вертикально */
+    }
+  
+    .modal-image {
+      width: 100%; /* Чтобы изображение занимало всю ширину модального окна */
+      margin-right: 0; /* Убрать отступ справа от изображения */
+    }
+  
+    .product-details {
+      text-align: center; /* Чтобы контент был центрирован */
+    }
+    
+    .product-name {
+      font-size: 32px; /* Уменьшить размер шрифта для поддержки меньших экранов */
+    }
+  
+    .product-price {
+      font-size: 16px; /* Уменьшить размер шрифта для поддержки меньших экранов */
+    }
+  
+    .filling-select,
+    .topping-select {
+      margin-bottom: 5px; /* Уменьшить нижний отступ */
+    }
+  
+    .order-button,
+    .close-button {
+      padding: 5px 10px; /* Уменьшить отступы кнопок */
+      font-size: 14px; /* Уменьшить размер шрифта кнопок */
+    }
+  }
+  
